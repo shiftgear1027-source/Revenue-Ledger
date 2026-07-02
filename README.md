@@ -1,73 +1,164 @@
 # Revenue Ledger — Revenue Aggregator MVP
 
-A small React app that pulls sales data from three store branches, merges
-duplicate products across branches, and shows a searchable, sorted table of
-total revenue per product.
+A React application that aggregates sales data from three branch locations, merges duplicate products, calculates total revenue, and presents the data in a clean, searchable ledger-style interface.
 
-## Setup
+## 🚀 Live Demo
 
-```bash
-npm install     # install dependencies
-npm test        # run all tests in watch mode
-npm start       # serve at http://localhost:3000/
-```
+**Vercel Deployment:**  
+https://revenue-ledger-nine.vercel.app/
 
-## How it works
+---
 
-- On load, the app fetches `api/branch1.json`, `api/branch2.json` and
-  `api/branch3.json` (served from `public/api/`) in parallel with `fetch`.
-- `src/utils/aggregateProducts.js` merges the three datasets: products with
-  the same name (even across different branches) have their revenue summed,
-  and the result is sorted alphabetically by product name.
-- The table can be filtered by product name via the search box (case
-  insensitive, matches anywhere in the name).
-- The total revenue footer always reflects the *currently filtered* rows,
-  not the full dataset.
-- All monetary values are rendered through `src/utils/formatNumber.js`.
+## 📌 Features
 
-## Project structure
+- Fetches sales data from three branch JSON files in parallel
+- Aggregates duplicate products across all branches
+- Automatically calculates total revenue per product
+- Search products with case-insensitive filtering
+- Live revenue total updates based on filtered results
+- Products sorted alphabetically
+- Responsive ledger-inspired UI
+- Loading, empty-state, and error handling
+- Comprehensive unit and integration tests
 
-```
+---
+
+## 🛠️ Tech Stack
+
+- React.js
+- JavaScript (ES6+)
+- CSS3
+- Jest
+- React Testing Library
+- Vercel (Deployment)
+- Git & GitHub
+
+---
+
+## 📂 Project Structure
+
+```text
 public/
   api/
     branch1.json
     branch2.json
     branch3.json
+
 src/
   utils/
-    aggregateProducts.js      # merge + sort logic
+    aggregateProducts.js
     aggregateProducts.test.js
-    formatNumber.js           # shared currency formatter
+    formatNumber.js
     formatNumber.test.js
-  App.js                      # fetch, filter, render
-  App.test.js                 # integration tests
+
+  App.js
+  App.test.js
   App.css
+  index.js
 ```
 
-## Tests
+---
 
-19 tests across 3 suites cover:
-- currency formatting (`formatNumber`)
-- merging/summing/sorting logic (`aggregateProducts`)
-- end-to-end app behaviour: loading state, fetching all 3 branches,
-  merging + sorting in the UI, total revenue calculation, case-insensitive
-  filtering with live total updates, empty-state messaging, and a
-  branch-fetch failure state
+## ⚙️ Installation
 
-Run them with:
+Clone the repository:
+
+```bash
+git clone https://github.com/shiftgear1027-source/Revenue-Ledger.git
+```
+
+Navigate into the project:
+
+```bash
+cd Revenue-Ledger
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm start
+```
+
+Application runs at:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🧪 Running Tests
+
+Run all tests:
 
 ```bash
 npm test
 ```
 
-## Design
+The project includes **19 tests across 3 test suites**, covering:
 
-Styled as a "ledger" — deep ink-green header, warm paper background, gold
-accents, monospace figures for the revenue column, and a dashed "tear line"
-above the total, echoing a receipt/ledger book rather than a generic
-dashboard.
+- Currency formatting
+- Product aggregation logic
+- Revenue calculation
+- Product sorting
+- Search functionality
+- Loading state
+- Error handling
+- Empty state
+- Integration testing
 
-## Deployment
+---
 
-Deployed with Vercel, connected to this GitHub repository. Every push to
-`main` redeploys automatically.
+## ⚡ How It Works
+
+On application startup:
+
+- Fetches data from:
+  - `public/api/branch1.json`
+  - `public/api/branch2.json`
+  - `public/api/branch3.json`
+- Combines products with the same name
+- Sums their revenue across all branches
+- Sorts products alphabetically
+- Displays the aggregated revenue table
+- Updates totals dynamically while searching
+
+---
+
+## 🎨 Design
+
+The application uses a **Ledger-inspired UI** featuring:
+
+- Deep ink-green header
+- Warm paper background
+- Gold accents
+- Monospace revenue values
+- Receipt-style dashed separator
+- Responsive layout for desktop and mobile
+
+---
+
+## 🚀 Deployment
+
+This project is deployed on **Vercel**.
+
+Live Application:
+
+https://revenue-ledger-nine.vercel.app/
+
+Every push to the **main** branch automatically triggers a new deployment via GitHub integration.
+
+---
+
+## 👨‍💻 Author
+
+**Avinasha M**
+
+GitHub:
+https://github.com/shiftgear1027-source
