@@ -1,0 +1,5 @@
+[
+  { "product": "Espresso Machine", "revenue": 720.25 },
+  { "product": "Toaster", "revenue": 210.00 },
+  { "product": "Air Fryer", "revenue": 300.01 }
+]

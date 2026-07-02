@@ -1,0 +1,5 @@
+[
+  { "product": "Blender", "revenue": 150.00 },
+  { "product": "Kettle", "revenue": 89.99 },
+  { "product": "Toaster", "revenue": 45.50 }
+]
