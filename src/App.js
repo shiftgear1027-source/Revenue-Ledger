@@ -99,9 +99,9 @@ function App() {
               <thead>
                 <tr>
                   <th scope="col">Product</th>
-                  <th scope="col" className="numeric-col">
-                    Total Revenue
-                  </th>
+                  <th scope="col">
+  Total Revenue
+</th>
                 </tr>
               </thead>
               <tbody>
